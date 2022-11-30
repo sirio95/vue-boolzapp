@@ -14,8 +14,16 @@
         <div id="app">
             <section class="utenti">
                 <div class="topbar"></div>
+                <div class="cerca_contatti"></div>
                 <ul class="contatti">
-                    <li v-for=""></li>
+                    <li v-for="contact in contacts" class="contatti_box">
+                        <img :src="contact.avatar" alt="contact.name" class="avatar">
+                        <div class="user_name">
+                            <h3>{{contact.name}}</h3>
+                            <div></div>
+                        </div>
+                        
+                    </li>
                 </ul>
             </section>
 
