@@ -42,11 +42,14 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="message_space" v-for="text in contact.messages">
-                        <div :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}<i class="fa-solid fa-angle-down"></i></div>
+                    <div class="message_space">
+                        <div v-for="text in contact.messages" :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}<i class="fa-solid fa-angle-down"></i></div>
                     </div>
+                    <div class="new_message">
+                        <input v-model="text" placeholder="Scrivi un messaggio" @KeyUp.enter="addingMessage(contact.messages)">
+                    </div> 
                 </div>
-                <div class="new_message"></div> 
+                
             </section>
 
         </div>

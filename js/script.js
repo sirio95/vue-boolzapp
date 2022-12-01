@@ -177,7 +177,18 @@ createApp({
     methods: {
         activateChat(index){
             this.activeContact = index;
+        },
+        addingMessage(message){
+            let newMessage= {
+                date: new Date().toLocaleString(),
+                message: this.text,
+                status: 'sent',
+            };
+            message.push(newMessage);
+            this.text= "";
+
         }
+        
     }
 
 }).mount('#app');
