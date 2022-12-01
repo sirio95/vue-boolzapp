@@ -1,9 +1,11 @@
+
 const {createApp} = Vue;
 
 createApp({
     data(){
         return{
 
+            activeContact: 0,
             
             contacts: [
                 {
@@ -173,8 +175,8 @@ createApp({
         }
     },
     methods: {
-        rendiVisibile(index){
-            this.contacts[index].visible= true;
+        activateChat(index){
+            this.activeContact = index;
         }
     }
 

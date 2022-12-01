@@ -17,11 +17,11 @@
                 <div class="topbar"></div>
                 <div class="cerca_contatti"></div>
                 <ul class="contatti">
-                    <li v-for="(contact, index) in contacts" class="contatti_box" @click="rendiVisibile(index)">
+                    <li v-for="(contact, index) in contacts" class="contatti_box" @click="activateChat(index)">
                         <img :src="contact.avatar" alt="contact.name" class="avatar">
                         <div class="user_name">
                             <h3>{{contact.name}}</h3>
-                            <sub>Ultimo Accesso</sub>
+                            <sub></sub>
                         </div>
                         
                     </li>
@@ -29,18 +29,22 @@
             </section>
 
             <section class="messaggi">
-                <div class="topbar" id="top_user">
-                </div>
-                <div id="chat">
-                    <ul id="user_text">
-                        <li v-for="(contact, index) in contacts" class="chat_box" :class="contacts[index].visible === 'true' ? 'show' : ''">
-                            <div v-for="text in contact.messages">
-                                <div :class="text.status==='sent' ? 'sent' : 'received'">{{text.message}}</div>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </div>
-                            
-                        </li>
-                    </ul>
+                <div class="chat" v-for="(contact, index) in contacts" :class="activeContact === index ? 'active' : ''">
+                    <div class="topbar">
+                        <ul class="icona_utenti">
+                            <li class="contatti_box">
+                                <img :src="contact.avatar" alt="contact.name" class="avatar">
+                                <div class="user_name">
+                                    <h3>{{contact.name}}</h3>
+                                    <sub></sub>
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="message_space" v-for="text in contact.messages">
+                        <div :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}<i class="fa-solid fa-angle-down"></i></div>
+                    </div>
                 </div>
                 <div class="new_message"></div> 
             </section>
