@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5dc396147b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzap</title>
 </head>
@@ -16,11 +17,11 @@
                 <div class="topbar"></div>
                 <div class="cerca_contatti"></div>
                 <ul class="contatti">
-                    <li v-for="contact in contacts" class="contatti_box">
+                    <li v-for="(contact, index) in contacts" class="contatti_box" @click="rendiVisibile(index)">
                         <img :src="contact.avatar" alt="contact.name" class="avatar">
                         <div class="user_name">
                             <h3>{{contact.name}}</h3>
-                            <div></div>
+                            <sub>Ultimo Accesso</sub>
                         </div>
                         
                     </li>
@@ -28,10 +29,19 @@
             </section>
 
             <section class="messaggi">
-                <div class="topbar"></div>
-                <ul class="chat">
-                    <li v-for=""></li>
-                </ul>
+                <div class="topbar" id="top_user">
+                </div>
+                <div id="chat">
+                    <ul id="user_text">
+                        <li v-for="(contact, index) in contacts" class="chat_box" :class="contacts[index].visible === 'true' ? 'show' : ''">
+                            <div v-for="text in contact.messages">
+                                <div :class="text.status==='sent' ? 'sent' : 'received'">{{text.message}}</div>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
                 <div class="new_message"></div> 
             </section>
 
