@@ -186,6 +186,16 @@ createApp({
             };
             message.push(newMessage);
             this.text= "";
+            setTimeout(function(){
+                let risposta = {
+                    date: new Date().toLocaleString(),
+                    message: 'ok',
+                    status: 'received',
+                };
+                message.push(risposta);
+            } 
+                
+            ,3000)
 
         }
         
