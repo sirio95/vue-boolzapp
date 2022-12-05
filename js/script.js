@@ -188,17 +188,25 @@ createApp({
             };
             message.push(newMessage);
             this.text= "";
+
+            message[message.length -1].date= "sta scrivendo...";
+            
             setTimeout(function(){
                 let risposta = {
-                    date: new Date().toLocaleString(),
+                    date: "new Date().toLocaleString()",
                     message: 'ok',
                     status: 'received',
                 };
                 message.push(risposta);
-                console.log(message)
+                console.log(message);
             } 
                 
-            ,3000)
+            ,3000);
+            setTimeout(function(){
+                message[message.length -1].date= new Date().toLocaleString();
+
+            }
+            ,1000)
 
         },
         trovaUtenti(){ 
@@ -216,7 +224,8 @@ createApp({
         },
         deleteMess(index){
             this.delMess= index;
-        }
+        },
+        
         
     }
 
