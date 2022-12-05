@@ -199,16 +199,24 @@ createApp({
             console.log(rispostaRandom);
 
             setTimeout(function(){
+
+                setTimeout(function(){
+                    message[message.length -1].date = new Date().toLocaleTimeString(); 
+                }
+                ,1000);
+
                 let risposta = {
-                    date: "new Date().toLocaleString()",
+                    date: 'online',
                     message: rispostaRandom,
                     status: 'received',
                 };
                 message.push(risposta);
                 console.log(message);
-            } 
+            }
                 
             ,3000);
+
+            
 
         },
         trovaUtenti(){ 
