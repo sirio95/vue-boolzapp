@@ -56,7 +56,7 @@ main{
 }
 .contatti{
     width:100%;
-    height: 520px;
+    height: 480px;
     background-color:#fff;
     overflow: scroll;
     overflow-x:hidden;
@@ -71,6 +71,21 @@ main{
     border: 1px solid #000;
 }
 
+.top{
+    width:100%;
+    margin:0;
+}
+
+.icons{
+    width:20%;
+    max-height: 100%;
+    margin-left: 45%;
+    margin-top: 10px;
+    color: gray;
+    display:flex;
+    justify-content: space-around;
+}
+
 .avatar{
     width:50px;
     height:50px;
@@ -79,7 +94,39 @@ main{
 }
 
 .user_name{
-    margin: 0 10px;
+    margin: 5px 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 30%;
+}
+.user_name div{
+    width: 200px;
+    font-size: 12px;
+}
+
+/* sezione ricerca e notifiche */
+.notifiche{
+    background-color: #8edafc;
+    width:100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+}
+.fa-bell-slash{
+    color: #8edafc;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 32px;
+}
+#notifiche_alert{
+    width:100%;
+    padding: 8px 15px;
+}
+#link_null{
+    pointer-events: none;
+    font-size:12px;
+    margin-left: 15%;
 }
 
 /* sezione chat generale */
@@ -104,7 +151,7 @@ main{
 /* icone utenti chat */
 .icona_utenti{
     width:100%;
-    height:auto;
+    max-height:100%;
 }
 
 /* spazio messaggi */
@@ -152,3 +199,6 @@ main{
     display:flex;
 }
 
+.inactive{
+    display:none;
+}
