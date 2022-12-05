@@ -1,3 +1,6 @@
+const risposte=[
+    'va bene', 'sono contento', 'ti aspetto', 'ottimo lavoro', 'Birraaa', 'Andiamo', 'Mi annoio', 'Che palle!', 'Ricordati di comprare le uova', 'Non bere troppo', 'Sono contento per te', 'ti chiamo così mi racconti'
+];
 
 const {createApp} = Vue;
 
@@ -192,9 +195,7 @@ createApp({
 
             message[message.length -1].date= "sta scrivendo...";
             
-            const risposte=[
-                'va bene', 'sono contento', 'ti aspetto', 'ottimo lavoro', 'Birraaa', 'Andiamo', 'Mi annoio', 'Che palle!', 'Ricordati di comprare le uova', 'Non bere troppo', 'Sono contento per te', 'ti chiamo così mi racconti'
-            ];
+            
 
             let rispostaRandom= risposte[randomNum(risposte.length -1, 0)];
             console.log(rispostaRandom);
