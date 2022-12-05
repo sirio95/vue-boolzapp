@@ -7,7 +7,6 @@ createApp({
 
             activeContact: 0,
             dropdown: -1,
-            delMess: -1,
 
             contacts: [
                 {
@@ -230,10 +229,16 @@ createApp({
 
         },
         messageOptions(index){
-            this.dropdown=index;
+            if(this.dropdown === index){
+                this.dropdown = -1;
+            }else{
+                this.dropdown=index;
+            }
+            
         },
-        deleteMess(index){
-            this.delMess= index;
+        deleteMess(index, message){
+            message.splice(index, 1);
+
         },
         
         

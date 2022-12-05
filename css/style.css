@@ -171,8 +171,8 @@ main{
     display:none;
     background-color: #fff;
     position:absolute;
-    top: 50%;
-    left: 80%;
+    top: 73%;
+    left: 31%;
     width: 130px;
     height:auto;
     border-radius: 15px;
@@ -194,7 +194,7 @@ main{
     padding: 2px 3px;
     border-radius: 10px;
     background-color: #a7dfd7;
-    width: 100px;
+    width: 150px;
     height:auto;
     position:relative;
 }
@@ -204,7 +204,7 @@ main{
     padding: 2px 3px;
     border-radius: 10px;
     background-color: white;
-    width: 100px;
+    width: 150px;
     height:auto;
     position:relative;
 }
@@ -226,4 +226,5 @@ main{
 .box div:hover{
     text-decoration: underline;
     transform: scale(1.01);
+    cursor: pointer;
 }
