@@ -17,10 +17,10 @@
             <div v-if="nuovoUtente === 1" id="new_user_info">
                 <div id="nome">
                     <i class="fa-solid fa-user"></i>
-                    <input v-model="new_name" type="text" placeholder="Chi vuoi messaggiare?">
+                    <input v-model="new_name" type="text" placeholder="Chi vuoi messaggiare?" required>
                 </div>
                 <div id="nuovo_messaggio">
-                    <input  v-model="new_message" type="text" placeholder="Scrivi qui il tuo messaggio">
+                    <input  v-model="new_message" type="text" placeholder="Scrivi qui il tuo messaggio" @KeyUp.enter="newChat" required>
                 </div>
                 <button @click="newChat">Aggiungi alla tua lista contatti</button>
             </div>
@@ -86,7 +86,7 @@
                         <div :class="text.status === 'sent' ? 'sent' : 'received'">
                             {{text.message}}
                             <i class="fa-solid fa-angle-down" @click="messageOptions(position)"></i>
-                            <div class="box" :class="dropdown === position ? 'visible' : ''">
+                            <div class="box" :class="activeDropdown === position ? 'visible' : ''">
                                 <div>Message info</div>
                                 <div @click="deleteMess(position, contact.messages)">Delete message</div>
                             </div>

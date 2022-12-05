@@ -9,7 +9,7 @@ createApp({
         return{
 
             activeContact: 0,
-            dropdown: -1,
+            activeDropdown: -1,
             nuovaChat: 1,
             nuovoUtente: 0,
 
@@ -185,6 +185,9 @@ createApp({
             this.activeContact = index;
         },
         addingMessage(message){
+
+            if(!this.text) return;
+            
             let newMessage= {
                 date: new Date().toLocaleString(),
                 message: this.text,
@@ -223,7 +226,7 @@ createApp({
         },
         trovaUtenti(){ 
             this.contacts.forEach(element => {
-                if(element.name.toLowerCase().includes(this.user_letter)){
+                if(element.name.toLowerCase().includes(this.user_letter.toLowerCase())){
                     element.visible= true;
                 }else{
                     element.visible= false;
@@ -231,12 +234,13 @@ createApp({
             });
 
         },
-        messageOptions(index){
-            if(this.dropdown === index){
-                this.dropdown = -1;
+        messageOptions(index){            
+            if(this.activeDropdown === index){
+                this.activeDropdown = -1;
             }else{
-                this.dropdown=index;
+                this.activeDropdown=index;
             }
+            console.log(this.activeDropdown);
             
         },
         deleteMess(index, message){
@@ -256,6 +260,7 @@ createApp({
             }
         },
         newChat(){
+            if(!this.new_name) return;
             let newContact= {
                 name: this.new_name,
                 avatar: 'https://static.wikia.nocookie.net/dragonballhero/images/e/ef/Cartoon-bunny-8.gif/revision/latest?cb=20111120232815',
@@ -270,11 +275,11 @@ createApp({
                 ]
             };
             newContact.messages.date= new Date().toLocaleTimeString();
-
             this.contacts.unshift(newContact);
-
             this.nuovoUtente = 0;
             this.nuovaChat = 1;
+            
+            
         }
         
         

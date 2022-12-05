@@ -299,8 +299,13 @@ main{
 .contatti li:hover{
     transform: scale(1.03);
     background-color: cornsilk;
+    cursor: pointer;
 }
 .fa-message:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.fa-angle-down:hover{
     transform: scale(1.03);
     cursor: pointer;
 }
