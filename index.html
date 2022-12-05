@@ -35,7 +35,8 @@
                     <a href="#" id="link_null">Attiva notifiche desktop</a>
                 </div>
                 <div class="cerca_contatti">
-                    <input v-model="user_letter" placeholder="Cerca o inizia una nuova chat" @keyup="trovaUtenti()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input id="contatti_lettera" v-model="user_letter" placeholder="Cerca o inizia una nuova chat" @keyup="trovaUtenti()">
                 </div>
                 <ul class="contatti">
                     <li v-for="(contact, index) in contacts" class="contatti_box" :class="contact.visible ? '' : 'inactive'" @click="activateChat(index)">
@@ -79,7 +80,9 @@
                         </div>
                     </div>
                     <div class="new_message">
-                        <input v-model="text" placeholder="Scrivi un messaggio" @KeyUp.enter="addingMessage(contact.messages)">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <input id="messaggio_nuovo" v-model="text" placeholder="Scrivi un messaggio" @KeyUp.enter="addingMessage(contact.messages)">
+                        <i class="fa-solid fa-microphone"></i>
                     </div> 
                 </div>
                 
