@@ -7,6 +7,8 @@ createApp({
 
             activeContact: 0,
             dropdown: -1,
+            nuovaChat: 1,
+            nuovoUtente: 0,
 
             contacts: [
                 {
@@ -240,8 +242,44 @@ createApp({
             message.splice(index, 1);
 
         },
+        menu_messaggi(){
+            if(this.nuovaChat !== 1){
+                this.nuovaChat = 1;
+            }else{
+                this.nuovaChat = 0;
+            };
+        },
+        nuovoContatto(){
+            if(this.nuovoUtente === 0){
+                this.nuovoUtente = 1;
+            }
+        },
+        newChat(){
+            let newContact= {
+                name: this.new_name,
+                avatar: 'https://static.wikia.nocookie.net/dragonballhero/images/e/ef/Cartoon-bunny-8.gif/revision/latest?cb=20111120232815',
+                visible: true,
+                messages: [
+                    {
+                        date: '',
+                        message: this.new_message,
+                        status: "sent",
+                    }
+                    
+                ]
+            };
+            newContact.messages.date= new Date().toLocaleTimeString();
+
+            this.contacts.unshift(newContact);
+
+            this.nuovoUtente = 0;
+            this.nuovaChat = 1;
+        }
+        
         
         
     }
 
 }).mount('#app');
+
+
