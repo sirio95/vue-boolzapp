@@ -68,8 +68,15 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="message_space">
-                        <div v-for="text in contact.messages" :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}<i class="fa-solid fa-angle-down"></i></div>
+                    <div v-for="(text, position) in contact.messages" class="message_space">
+                        <div v-if="delMess !== position" :class="text.status === 'sent' ? 'sent' : 'received'">
+                            {{text.message}}
+                            <i class="fa-solid fa-angle-down" @click="messageOptions(position)"></i>
+                            <div class="box" :class="dropdown === position ? 'visible' : ''">
+                                <div @click="messageInfo">Message info</div>
+                                <div @click="deleteMess(position)">Delete message</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="new_message">
                         <input v-model="text" placeholder="Scrivi un messaggio" @KeyUp.enter="addingMessage(contact.messages)">

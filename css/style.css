@@ -167,6 +167,18 @@ main{
     justify-content: space-around;
 }
 
+.box{
+    display:none;
+    background-color: #fff;
+    position:absolute;
+    top: 50%;
+    left: 80%;
+    width: 130px;
+    height:auto;
+    border-radius: 15px;
+    padding: 2px 3px;
+}
+
 /* inserimento messaggio */
 
 .new_message{
@@ -182,8 +194,9 @@ main{
     padding: 2px 3px;
     border-radius: 10px;
     background-color: #a7dfd7;
-    width: 80px;
+    width: 100px;
     height:auto;
+    position:relative;
 }
 
 .received{
@@ -191,8 +204,9 @@ main{
     padding: 2px 3px;
     border-radius: 10px;
     background-color: white;
-    width: 80px;
+    width: 100px;
     height:auto;
+    position:relative;
 }
 
 .active{
@@ -201,4 +215,15 @@ main{
 
 .inactive{
     display:none;
+}
+
+.visible{
+    display:block;  
+}
+
+
+/* effetti hover */
+.box div:hover{
+    text-decoration: underline;
+    transform: scale(1.01);
 }

@@ -6,7 +6,9 @@ createApp({
         return{
 
             activeContact: 0,
-            
+            dropdown: -1,
+            delMess: -1,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -209,6 +211,12 @@ createApp({
             });
 
         },
+        messageOptions(index){
+            this.dropdown=index;
+        },
+        deleteMess(index){
+            this.delMess= index;
+        }
         
     }
 
